@@ -6,12 +6,14 @@ public class TestLinkedList {
         HeyJude.addAtIndex("Heeeey Juuuuudddeeee",0);
         HeyJude.addAtIndex("Dont Make it Baad",1);
         HeyJude.addAtIndex("Remember, the love is all in your hearrrrt",2);
-
+        //HeyJude.removeAtIndex(1);
 
         //System.out.println(HeyJude.getHead().getData());
         System.out.println(HeyJude.getAtIndex(0));
+        System.out.println(HeyJude.removeAtIndex(1));
         System.out.println(HeyJude.getAtIndex(1));
-        System.out.println(HeyJude.getAtIndex(2));
+        //System.out.println(HeyJude.getAtIndex(2));
+
 
 
 

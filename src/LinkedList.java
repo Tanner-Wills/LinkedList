@@ -82,7 +82,18 @@ public class LinkedList <T> implements List<T>{
 
     @Override
     public T removeAtIndex(int index) {
-        return null;
+        if(index < 0 || index > size -1){
+            throw new IllegalArgumentException("Your index is out of the list bounds");
+        } else {
+            Node<T> prev = this.head;
+            for(int i = 0; i < index-1; i++){
+                prev = prev.getNext();
+            }
+            Node<T> removeNode = prev.getNext();
+            Node<T> prevNextNext = prev.getNext().getNext();
+            prev.setNext(prevNextNext);
+            return removeNode.getData();
+        }
     }
 
     @Override

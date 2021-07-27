@@ -24,7 +24,6 @@ public class LinkedList <T> implements List<T>{
     public void addAtIndex(T data, int index){
         if(index < 0 || index > size){
             throw new IllegalArgumentException("Your index is out of the list bounds");
-
         } else if (data == null) {
             throw new IllegalArgumentException("You cannot add null data to the list");
         } else {
@@ -73,7 +72,11 @@ public class LinkedList <T> implements List<T>{
         if(index < 0 || index > size -1){
             throw new IllegalArgumentException("Your index is out of the list bounds");
         } else {
-            return;
+            Node<T> curr = this.head;
+            for(int i = 0; i < index; i++){
+                curr = curr.getNext();
+            }
+            return curr.getData();
         }
     }
 

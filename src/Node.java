@@ -1,4 +1,5 @@
 public class Node<E> {
+
     //Instance Variables
     private E data;
     private Node<E> next;
@@ -28,7 +29,6 @@ public class Node<E> {
     public void setNext(){
         this.next = next;
     }
-
 
     //Node Methods
 

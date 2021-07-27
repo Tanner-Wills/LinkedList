@@ -20,10 +20,19 @@ public class LinkedList <T> implements List<T>{
     }
 
     //Linked List Methods
-
     @Override
-    public void addAtIndex(T data, int index) {
+    public void addAtIndex(T data, int index){
+        if(index < 0 || index > size){
+            throw new IllegalArgumentException("Your index is out of the list bounds");
+        } else if (data == null) {
+            throw new IllegalArgumentException("You cannot add null data to the list");
+        } else {
+            if (index == 0){
+                this.head
+            }
+            this.size += 1;
 
+        }
     }
 
     @Override

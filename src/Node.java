@@ -13,6 +13,26 @@ public class Node<E> {
         this(data, null);
     }
 
+    //Getters
+    public E getData(){
+        return this.data;
+    }
+    public Node<E> getNext(){
+        return this.next;
+    }
+
+    //Setters
+    public void setData(){
+        this.data = data;
+    }
+    public void setNext(){
+        this.next = next;
+    }
+
+
     //Node Methods
+
+
+
 
 }

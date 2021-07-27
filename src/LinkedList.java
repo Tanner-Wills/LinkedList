@@ -24,20 +24,57 @@ public class LinkedList <T> implements List<T>{
     public void addAtIndex(T data, int index){
         if(index < 0 || index > size){
             throw new IllegalArgumentException("Your index is out of the list bounds");
+
         } else if (data == null) {
             throw new IllegalArgumentException("You cannot add null data to the list");
         } else {
-            if (index == 0){
-                this.head
-            }
-            this.size += 1;
 
+        Node<T> newNode = new Node<>(data);
+
+        //Edge cases
+        //#1 if the list is empty
+        if(size == 0) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+
+        //#2 if the index == 0
+        else if(index == 0) {
+            Node<T> oldHead = this.head;
+            this.head = newNode;
+            newNode.setNext(oldHead);
+        }
+
+        //#3 if the index is == size
+        else if(index == size) {
+            Node<T> oldTail = this.tail;
+            this.tail = newNode;
+            oldTail.setNext(newNode);
+
+        //End of Edge Cases
+        } else {
+            //Capture previous node by looping through the list starting at the head node.
+            Node<T> prevNode = this.head;
+            for (int i = 0; i < index - 1; i++)
+                prevNode = prevNode.getNext();
+
+            //Insert the new Node at the current index and point it to the next Node.
+            Node<T> currNode = prevNode.getNext();
+            prevNode.setNext(newNode);
+            newNode.setNext(currNode);
+        }
+        //Increment the size of the Linked List + 1.
+        this.size += 1;
         }
     }
 
     @Override
     public T getAtIndex(int index) {
-        return null;
+        if(index < 0 || index > size -1){
+            throw new IllegalArgumentException("Your index is out of the list bounds");
+        } else {
+            return;
+        }
     }
 
     @Override

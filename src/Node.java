@@ -23,10 +23,10 @@ public class Node<E> {
     }
 
     //Setters
-    public void setData(){
+    public void setData(E data){
         this.data = data;
     }
-    public void setNext(){
+    public void setNext(Node<E> next){
         this.next = next;
     }
 

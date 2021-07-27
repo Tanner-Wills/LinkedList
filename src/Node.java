@@ -1,15 +1,15 @@
-public class Node {
+public class Node<E> {
     //Instance Variables
-    private Object data;
-    private Node next;
+    private E data;
+    private Node<E> next;
 
     //Constructor
-    public Node(Object data, Node next){
+    public Node(E data, Node<E> next){
         this.data = data;
         this.next = next;
     }
 
-    public Node(Object data){
+    public Node(E data){
         this(data, null);
     }
 
